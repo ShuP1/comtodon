@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Comtodon samples
+    link(rel="stylesheet" href="style.css")
+  body
+    h1 Comtodon samples
+    main
+      section
+        h2 Simple
+        .comtodon(data-domain="mastodon.social" data-status="100745593232538751")
+
+      section
+        h2 Tree
+        .comtodon(data-domain="mastodon.social" data-status="100745593232538751" data-deep)
+
+      section
+        h2 Direct
+        .comtodon(data-domain="mastodon.social" data-status="100745593232538751" data-deep="1")
+
+      section
+        h2 Moderation
+        .comtodon(data-domain="mastodon.social" data-status="100745593232538751" data-deep="1" data-moderator="358957")
+
+    script(src="comtodon.js" defer)

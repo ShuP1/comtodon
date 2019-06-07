@@ -1,0 +1,117 @@
+@charset "UTF-8";
+* {
+  font-family: sans-serif;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2em;
+  padding: 0 2em;
+}
+
+.comtodon .status {
+  position: relative;
+}
+
+.comtodon .content, .comtodon .reply-main {
+  margin-bottom: .5em;
+}
+
+.comtodon .content {
+  border-left: 2px solid #777;
+}
+
+.comtodon .content.sensitive {
+  content: 'Sensitive';
+}
+
+.comtodon .replies {
+  margin-left: 1em;
+}
+
+.comtodon p {
+  margin: .1em;
+}
+
+.comtodon a {
+  text-decoration: none;
+  color: #777;
+}
+
+.comtodon .emoji {
+  height: 1em;
+}
+
+.comtodon .author {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3.3em auto;
+      grid-template-columns: 3.3em auto;
+  -ms-grid-rows: (1em)[3];
+      grid-template-rows: repeat(3, 1em);
+  grid-gap: .1em;
+}
+
+.comtodon .author .avatar {
+  border-radius: 20%;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  grid-area: 1 / 1 / 4 / 1;
+  height: 100%;
+}
+
+.comtodon .author .name {
+  color: black;
+  font-weight: bold;
+}
+
+.comtodon .author .acct:before {
+  content: '@';
+}
+
+.comtodon .date {
+  float: right;
+}
+
+.comtodon .reply-main {
+  display: inline-block;
+  color: white;
+  background-color: #777;
+  border-radius: .5em;
+  padding: .1em .3em;
+}
+
+.comtodon .reply-main:after {
+  content: '✉';
+  margin-left: .5em;
+}
+
+.comtodon .reply {
+  visibility: hidden;
+  position: absolute;
+  right: .1em;
+  top: 2em;
+}
+
+.comtodon .reply:after {
+  content: '✉';
+  visibility: visible;
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: white;
+  background-color: #777;
+  border-radius: .5em;
+  font-size: .8em;
+  padding: .1em .3em;
+}
+/*# sourceMappingURL=style.css.map */
