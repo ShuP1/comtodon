@@ -66,13 +66,13 @@
   function html(statuses, domain) {
     return statuses.map(({ account, created_at, content, id, emojis, sensitive, spoiler_text, replies }) =>
       h('status', h('date', ago(created_at), 'p') +
-        h('author" href="' + account.url, `<img class="avatar" src="${account.avatar_static}" />` +
+        h('author" target="_blank" target="_blank" href="' + account.url, `<img class="avatar" src="${account.avatar_static}" />` +
           h('name', moji(account.display_name, account.emojis), 'span') +
           h('acct', account.acct, 'span'), 'a') +
         (spoiler_text || sensitive ? h('spoiler', spoiler_text || h('spoiler-empty', 'Sensitive', 'span')) : '') +
-        h('content' + (spoiler_text || sensitive ? ' sensitive' : ''), moji(content, emojis)) +
+        h('status-content' + (spoiler_text || sensitive ? ' sensitive' : ''), moji(content, emojis)) +
         (replies ? h('replies', html(replies, domain)) : '') +
-        h(`reply" href="https://${domain}/interact/${id}?type=reply`, 'Reply', 'a'))).join('')
+        h(`reply" target="_blank" href="https://${domain}/interact/${id}?type=reply`, 'Reply', 'a'))).join('')
   }
 
   function moderate(statuses, id) {
@@ -95,7 +95,7 @@
     fetch(`https://${domain}/api/v1/statuses/${status}/context`)
     .then(res => res.json())
     .then(res => {
-      el.innerHTML = h(`reply-main" href="https://${domain}/interact/${status}?type=reply`, 'Comment', 'a')
+      el.innerHTML = h(`reply-main" target=\"_blank\" href="https://${domain}/interact/${status}?type=reply`, 'Comment', 'a')
       const statuses = moderate(res.descendants, el.dataset.moderator)
       if (statuses) {
         el.innerHTML += html('deep' in el.dataset ? tree(statuses, { id: status }, el.dataset.deep || -1).replies : statuses, domain)

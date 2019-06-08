@@ -44,7 +44,7 @@ In your single page layout
 ```html
 {{ if .Params.comtodon }}
 <div class="comtodon" data-domain="{{ .Site.Params.comtodon.domain }}" data-status="{{ .Params.comtodon }}" {{ with .Site.Params.comtodon.moderator }}data-moderator="{{ . }}"{{ end }}></div>
-<script src="//comtodon.min.js" defer></script>
+<script src="/comtodon.min.js" defer></script>
 {{- end }}
 ```
 

@@ -20,15 +20,15 @@ main {
   position: relative;
 }
 
-.comtodon .content, .comtodon .reply-main {
+.comtodon .status-content, .comtodon .reply-main {
   margin-bottom: .5em;
 }
 
-.comtodon .content {
+.comtodon .status-content {
   border-left: 2px solid #777;
 }
 
-.comtodon .content.sensitive {
+.comtodon .status-content.sensitive {
   content: 'Sensitive';
 }
 
